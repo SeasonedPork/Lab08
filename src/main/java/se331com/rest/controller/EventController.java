@@ -94,6 +94,10 @@ public class EventController {
         perpage = perpage == null? eventList.size():perpage;
         page = page == null?1:page;
         Integer firstIndex = (page-1)*perpage;
-        List<Event> output = new Array
+        List<Event> output = new ArrayList<>();
+        for (int i = firstIndex; i < firstIndex + perpage; i++) {
+            output.add(eventList.get(i));
+        }
+        return ResponseEntity.ok(output);
     }
 }
