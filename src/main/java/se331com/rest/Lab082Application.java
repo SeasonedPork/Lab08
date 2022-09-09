@@ -7,8 +7,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-  @Bean //why this thing exist for if it not calls LOLOLOL
   public class Lab082Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Lab082Application.class, args);
+    }
+    @Bean
      public WebMvcConfigurer corsConfigurer(){
          return new WebMvcConfigurer() {
              @Override
