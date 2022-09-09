@@ -31,7 +31,7 @@ public class EventController {
         List<Event> output = null;
         Integer eventSize = eventService.getEventSize();
         HttpHeaders responseHeader = new HttpHeaders();
-        responseHeader.set("x-total-coint",String.valueOf(eventSize));
+        responseHeader.set("x-total-count",String.valueOf(eventSize));
         try {
             output = eventService.getEvents(perpage, page);
             return new ResponseEntity<>(output,responseHeader,HttpStatus.OK);
